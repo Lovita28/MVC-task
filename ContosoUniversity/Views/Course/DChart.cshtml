@@ -1,0 +1,19 @@
+﻿@model List<ContosoUniversity.Models.Course>
+@{
+    Layout = null;
+}
+<!DOCTYPE html>
+
+<h2>DChart</h2>
+<body>
+    @{ 
+        var chart = new Chart(width: 700, height: 500)
+            .AddTitle("Course Credit")
+            .AddSeries("Default", chartType: "Bar",
+            xValue: Model, xField: "Title",
+            yValues: Model, yFields: "Credits"
+            )
+            .Write();
+    }
+    
+</body>
